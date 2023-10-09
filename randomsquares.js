@@ -13,8 +13,8 @@ function setPic(type) {
         const linesLink = "Layers/Lines/" + randomNumber + ".png";
         const faceLink = "Layers/Face/FaceLines/" + randomNumber + ".png";
         document.getElementById(type).src = link;
-        document.getElementById('lines').src = linesLink;
-        document.getElementById('face').src = faceLink;
+        document.getElementById('Lines').src = linesLink;
+        document.getElementById('Face').src = faceLink;
     } else if (type === 'Secondary') {
         const link = "Layers/" + type + "/Basic/" + randomNumber + ".png";
         document.getElementById(type).src = link;

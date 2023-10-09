@@ -8,17 +8,17 @@ function chooseColor() {
 
 function setPic(type) {
     let randomNumber = colors[chooseColor()];
-    if (type === 'primary') {
+    if (type === 'Primary') {
         const link = "Layers/" + type + "/Basic/" + randomNumber + ".png";
         const linesLink = "Layers/Lines/" + randomNumber + ".png";
         const faceLink = "Layers/Face/FaceLines/" + randomNumber + ".png";
         document.getElementById(type).src = link;
         document.getElementById('lines').src = linesLink;
         document.getElementById('face').src = faceLink;
-    } else if (type === 'secondary') {
+    } else if (type === 'Secondary') {
         const link = "Layers/" + type + "/Basic/" + randomNumber + ".png";
         document.getElementById(type).src = link;
-    } else if (type === 'wings') {
+    } else if (type === 'Wings') {
         var tempRandom = Math.floor(Math.random() * 100);
         if (tempRandom > 75) {
             const wingLink = "Layers/Wings/" + randomNumber + ".png";
@@ -26,7 +26,7 @@ function setPic(type) {
         } else {
             document.getElementById(type).src = "";
         }
-    } else if (type === 'horns') {
+    } else if (type === 'Horns') {
         var tempRandom = Math.floor(Math.random() * 100);
         if (tempRandom > 50) {
             const hornLink = "Layers/Horns/SmallHorns/" + randomNumber + ".png";

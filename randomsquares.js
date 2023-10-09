@@ -40,8 +40,8 @@ function setPic(type) {
 
 
     function runCode() {
-        setPic('primary');
-        setPic('secondary');
-        setPic('wings');
-        setPic('horns');
+        setPic('Primary');
+        setPic('Secondary');
+        setPic('Wings');
+        setPic('Horns');
     }

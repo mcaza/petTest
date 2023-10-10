@@ -34,7 +34,8 @@ function runCode() {
     } else {
         setMainColorPic('Hair', 'Layers/Hair/Mane/', hair);
     }
-   /* roll = randomNumber();
+   /* roll = randomNumber(); */
+    roll = 45;
     if (roll < 25) {
         setMainColorPic('Tail', 'Layers/Tail/Nub/', color);
     } else if (roll < 50) {
@@ -44,5 +45,5 @@ function runCode() {
     } else {
         setMainColorPic('Tail', 'Layers/Tail/Dragon/', color);
         setMainColorPic('SecondTail', 'Layers/Tail/Dragon/End/', hair);
-    } */
+    } 
 }

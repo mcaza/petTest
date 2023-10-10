@@ -1,47 +1,48 @@
-const colors = ['Amethyst', 'Aqua', 'Aruba', 'Ash', 'Azure', 'BabyBlue', 'BabyPink', 'Banana', 'Basil', 'Belize', 'Bellflower', 'Black', 'Bluebell', 'Blush', 'Breeze', 'Brown', 'Bubblegum', 'Cactus', 'Camel', 'Canary', 'Cappuccino', 'Caramel', 'Cerise', 'Charcoal', 'Chocolate', 'Coral', 'Crimson', 'DarkLime', 'DarkTurquoise', 'Denim', 'DustyBlue', 'Eggplant', 'ElectricBlue', 'Emerald', 'Evergreen', 'Fuchsia', 'Gold', 'Graphite', 'Honeydew', 'HunterGreen', 'Indigo', 'Ink', 'Iris', 'Ivory', 'Jade', 'Jewel', 'KellyGreen', 'Kiwi', 'Lake', 'Latte', 'Lavender', 'Lemon', 'Lilac', 'Lime', 'Mallard', 'Mandarin', 'Mango', 'Mauve', 'Merlot', 'MidnightBlue', 'MidnightGhost', 'Mocha', 'Natural', 'Navy', 'Olive', 'Opal', 'Orange', 'Papaya', 'ParisPink', 'Platinum', 'Plumwine', 'Pumpkin', 'Purple', 'Rasberry', 'Red', 'RoyalBlue', 'Rust', 'Saltwater', 'Scarlet', 'Seafoam', 'Shell', 'Silver', 'SnowWhite', 'Steel', 'Taupe', 'Teal', 'Turquoise', 'Vanilla', 'Violet', 'Watermelon', 'White', 'Wildrose'];
-const gene = ['Basic']
+const colors = ['Amethyst', 'Banana', 'Basil', 'BeachRock', 'Beef', 'BellPepper', 'Berry', 'Blackberry', 'Blueberry', 'BlueMushroom', 'BlueRasperry', 'Bubblegum', 'BurntToast', 'Cherry', 'Cinnamon', 'Cornflower', 'CottonCandy', 'Cranberry', 'Denim', 'Dewdrop', 'Eggplant', 'FruitSnack', 'Gold', 'Goldfish', 'GreenGrape', 'Guava', 'Gumdrop', 'Haunt', 'Holiday', 'HotChocolate', 'Icing', 'Ink', 'Iron', 'JellyBean', 'Juice', 'Kiwi', 'Latte', 'Lavender', 'Leaf', 'Lemon', 'Lime', 'Love', 'Mandarin', 'Marker', 'Marmalade', 'Mocha', 'Molasses', 'Night', 'Oatmeal', 'Olive', 'Orange', 'Papaya', 'Party', 'Pastel', 'Peach', 'Pillow', 'Pine', 'Plum', 'Potato', 'PurpleGrape', 'Rock', 'Sardine', 'Seafoam', 'Shell', 'Silver', 'Snow', 'SoftServe', 'Taffy', 'Tomato', 'Vanilla', 'Waterfall', 'Yarn'];
 
 function chooseColor() {
     var randomNum = Math.floor(Math.random() * colors.length);
+    return colors[randomNum];
+}
+
+function randomNumber() {
+    var randomNum = Math.floor(Math.random() * 100);
     return randomNum;
 }
 
-function setPic(type) {
-    let randomNumber = colors[chooseColor()];
-    if (type === 'Primary') {
-        const link = "Layers/" + type + "/Basic/" + randomNumber + ".png";
-        const linesLink = "Layers/Lines/" + randomNumber + ".png";
-        const faceLink = "Layers/Face/FaceLines/" + randomNumber + ".png";
-        document.getElementById(type).src = link;
-        document.getElementById('Lines').src = linesLink;
-        document.getElementById('Face').src = faceLink;
-    } else if (type === 'Secondary') {
-        const link = "Layers/" + type + "/Basic/" + randomNumber + ".png";
-        document.getElementById(type).src = link;
-    } else if (type === 'Wings') {
-        var tempRandom = Math.floor(Math.random() * 100);
-        if (tempRandom > 75) {
-            const wingLink = "Layers/Wings/" + randomNumber + ".png";
-            document.getElementById(type).src = wingLink;
-        } else {
-            document.getElementById(type).src = "";
-        }
-    } else if (type === 'Horns') {
-        var tempRandom = Math.floor(Math.random() * 100);
-        if (tempRandom > 50) {
-            const hornLink = "Layers/Horns/SmallHorns/" + randomNumber + ".png";
-            document.getElementById(type).src = hornLink;
-        } else {
-            document.getElementById(type).src = "";
-        }
-    }
+function setMainColorPic(type, file, mainColor) {
+    const link = file + mainColor + ".png";
+    document.getElementById(type).src = link;
 }
 
+function setNewColorPic(type, file) {
+    const randomColor = choosecolor();
+    const link = file + randomColor + ".png";
+    document.getElementById(type).src = link;
+}
 
-
-    function runCode() {
-        setPic('Primary');
-        setPic('Secondary');
-        setPic('Wings');
-        setPic('Horns');
+function runCode() {
+    const color = chooseColor();
+    const hair = chooseColor();
+    setMainColorPic('Primary', 'Layers/Primary/', color);
+    setMainColorPic('MainLines', 'Layers/MainLines/', color);
+    let roll = randomNumber();
+    if (roll < 33) {
+        setMainColorPic('Hair', 'Layers/Hair/Floof/', color);
+    } else if (roll < 66) {
+        setMainColorPic('Hair', 'Layers/Hair/Wave/', hair);
+    } else {
+        setMainColorPic('Hair', 'Layers/Hair/Mane/', hair);
     }
+   /* roll = randomNumber();
+    if (roll < 25) {
+        setMainColorPic('Tail', 'Layers/Tail/Nub/', color);
+    } else if (roll < 50) {
+        setMainColorPic('Tail', 'Layers/Tail/Poof/', color);
+    } else if (roll < 75) {
+        setMainColorPic('Tail', 'Layers/Tail/Long/', color);
+    } else {
+        setMainColorPic('Tail', 'Layers/Tail/Dragon/', color);
+        setMainColorPic('SecondTail', 'Layers/Tail/Dragon/End/', hair);
+    } */
+}

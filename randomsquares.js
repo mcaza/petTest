@@ -39,7 +39,13 @@ function runCode() {
     if (roll < 25) {
         setMainColorPic('Tail', 'Layers/Tail/Nub/', color);
     } else if (roll < 50) {
-        setMainColorPic('Tail', 'Layers/Tail/Poof/', hair);
+        roll = randomNumber();
+        if (roll < 50) {
+            setMainColorPic('Tail', 'Layers/Tail/Poof/', hair);
+        } else {
+            setMainColorPic('Tail', 'Layers/Tail/Poof/', color);
+        }
+        
     } else if (roll < 75) {
         setMainColorPic('Tail', 'Layers/Tail/Long/', color);
     } else {

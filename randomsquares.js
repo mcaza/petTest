@@ -39,11 +39,19 @@ function runCode() {
     if (roll < 25) {
         setMainColorPic('Tail', 'Layers/Tail/Nub/', color);
     } else if (roll < 50) {
-        setMainColorPic('Tail', 'Layers/Tail/Poof/', color);
+        setMainColorPic('Tail', 'Layers/Tail/Poof/', hair);
     } else if (roll < 75) {
         setMainColorPic('Tail', 'Layers/Tail/Long/', color);
     } else {
         setMainColorPic('Tail', 'Layers/Tail/Dragon/', color);
         setMainColorPic('SecondTail', 'Layers/Tail/Dragon/End/', hair);
     } 
+    /*roll = randomNumber();
+    if (roll < 50) {
+        setMainColorPic('Spots', 'Layers/Markings/Belly/', color);
+    }
+    roll = randomNumber();
+    if (roll < 50) {
+        setMainColorPic('Belly', 'Layers/Markings/Belly/', color);
+    }*/
 }

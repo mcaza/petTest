@@ -1,14 +1,29 @@
 const colors = ['Amethyst', 'Banana', 'Basil', 'BeachRock', 'Beef', 'BellPepper', 'Berry', 'Blackberry', 'Blueberry', 'BlueMushroom', 'BlueRaspberry', 'Bubblegum', 'BurntToast', 'Cherry', 'Cinnamon', 'Cornflower', 'CottonCandy', 'Cranberry', 'Denim', 'Dewdrop', 'Eggplant', 'FruitSnack', 'Gold', 'Goldfish', 'GreenGrape', 'Guava', 'Gumdrop', 'Haunt', 'Holiday', 'HotChocolate', 'Icing', 'Ink', 'Iron', 'JellyBean', 'Juice', 'Kiwi', 'Latte', 'Lavender', 'Leaf', 'Lemon', 'Lime', 'Love', 'Mandarin', 'Marker', 'Marmalade', 'Mocha', 'Molasses', 'Night', 'Oatmeal', 'Olive', 'Orange', 'Papaya', 'Party', 'Pastel', 'Peach', 'Pillow', 'Pine', 'Plum', 'Potato', 'PurpleGrape', 'Rock', 'Sardine', 'Seafoam', 'Shell', 'Silver', 'Snow', 'SoftServe', 'Taffy', 'Tomato', 'Vanilla', 'Waterfall', 'Yarn'];
 const clothes = ['None', 'HarnessTrans', 'HarnessBrown'];
+const hats = ['None', 'FlowerCrownPastel', 'Glasses'];
 
 function chooseColor() {
     var randomNum = Math.floor(Math.random() * colors.length);
     return colors[randomNum];
 }
 
-function chooseClothes() {
+function chooseClothesBottom() {
     var randomNum = Math.floor(Math.random() * clothes.length);
     return clothes[randomNum];
+}
+
+function chooseClothesTop() {
+    var randomNum = Math.floor(Math.random() * hats.length);
+    return hats[randomNum];
+}
+
+function setOutfit(clothes, type) {
+    if (clothes !== 'None') {
+        const link = 'Layers/' + type + "/" + clothes + '.png';
+        document.getElementById(type).src = link;
+    } else {
+        document.getElementById(type).src = "";
+    }
 }
 
 function randomNumber() {
@@ -22,7 +37,7 @@ function setMainColorPic(type, file, mainColor) {
 }
 
 function setNewColorPic(type, file) {
-    const randomColor = choosecolor();
+    const randomColor = chooseColor();
     const link = file + randomColor + ".png";
     document.getElementById(type).src = link;
 }
@@ -38,6 +53,7 @@ function setMarkings(color, type) {
 
 function setTail(color, hair) {
     roll = randomNumber();
+    document.getElementById('SecondTail').src = "";
     if (roll < 25) {
         setMainColorPic('Tail', 'Layers/Tail/Nub/', color);
     } else if (roll < 50) {
@@ -74,21 +90,20 @@ function setHair(color, hair) {
 function runCode() {
     const color = chooseColor();
     const hair = chooseColor();
-    const clothes = chooseClothes();
+    const bottom = chooseClothesBottom();
+    const hat = chooseClothesTop();
     setMainColorPic('Primary', 'Layers/Primary/', color);
     setMainColorPic('MainLines', 'Layers/MainLines/', color);
+    setNewColorPic('Nose', 'Layers/Noses/');
     setHair(color, hair);
     setTail(color, hair);
     setMarkings(color, 'Belly');
     setMarkings(color, 'Spots');
+    setOutfit(bottom, 'ClothesBottom');
+    setOutfit(hat, 'ClothesTop');
 
     /*roll = randomNumber();
      if (roll < 50) {
          document.getElementById('Whiskers').src = 'Layers/Whiskers.png';
      } */
-    if (clothes !== 'None') {
-        setMainColorPic('Clothes', 'Layers/ClothesBottom/', clothes);
-    } else {
-        document.getElementById('Clothes').src = "";
-    }
 }

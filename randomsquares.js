@@ -1,6 +1,6 @@
 const colors = ['Amethyst', 'Banana', 'Basil', 'BeachRock', 'Beef', 'BellPepper', 'Berry', 'Blackberry', 'Blueberry', 'BlueMushroom', 'BlueRaspberry', 'Bubblegum', 'BurntToast', 'Cherry', 'Cinnamon', 'Cornflower', 'CottonCandy', 'Cranberry', 'Denim', 'Dewdrop', 'Eggplant', 'FruitSnack', 'Gold', 'Goldfish', 'GreenGrape', 'Guava', 'Gumdrop', 'Haunt', 'Holiday', 'HotChocolate', 'Icing', 'Ink', 'Iron', 'JellyBean', 'Juice', 'Kiwi', 'Latte', 'Lavender', 'Leaf', 'Lemon', 'Lime', 'Love', 'Mandarin', 'Marker', 'Marmalade', 'Mocha', 'Molasses', 'Night', 'Oatmeal', 'Olive', 'Orange', 'Papaya', 'Party', 'Pastel', 'Peach', 'Pillow', 'Pine', 'Plum', 'Potato', 'PurpleGrape', 'Rock', 'Sardine', 'Seafoam', 'Shell', 'Silver', 'Snow', 'SoftServe', 'Taffy', 'Tomato', 'Vanilla', 'Waterfall', 'Yarn'];
-const clothes = ['None', 'HarnessTrans', 'HarnessBrown'];
-const hats = ['None', 'FlowerCrownPastel', 'Glasses'];
+const clothes = ['None', 'HarnessTrans', 'HarnessBrown', 'HarnessPink', 'HarnessBlue', 'BandagesChest', 'ServiceVestBeige', 'ServiceVestBlue', 'ServiceVestPink', 'ServiceVestRed'];
+const hats = ['None','None','None','None', 'FlowerCrownPastel', 'Glasses', 'Halo'];
 
 function chooseColor() {
     var randomNum = Math.floor(Math.random() * colors.length);
@@ -84,6 +84,13 @@ function setHair(color, hair) {
         setMainColorPic('Hair', 'Layers/Hair/Wave/', hair);
     } else {
         setMainColorPic('Hair', 'Layers/Hair/Mane/', hair);
+    }
+}
+
+function setNose(color) {
+    var randomNum = randomNumber();
+    if (randomNum < 50) {
+        
     }
 }
 

@@ -1,6 +1,6 @@
 .art-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
 }
 
@@ -9,7 +9,17 @@
     grid-row: 1 / span 1;
 }
 
-.art img {
+.arttwo {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.artthree {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+}
+
+img {
     width: 30rem;
     
 }

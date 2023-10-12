@@ -118,7 +118,8 @@ function setMarkings(color, type) {
 
 function snoozelingGenerate(number) {
     var snoozelingOne = new snoozeling();
-    setMainColorPic('Primary' + number, 'Layers/Primary/', snoozelingOne.mainColor);
+    const primaryID = 'Primary' + number;
+    setMainColorPic(primaryID, 'Layers/Primary/', snoozelingOne.mainColor);
     setMainColorPic('MainLines' + number, 'Layers/MainLines/', snoozelingOne.mainColor);
     /* setMainColorPic('FaceMain', 'Layers/Faces/Tongue/', color); */
     setMainColorPic('Nose' + number, 'Layers/Noses/', snoozelingOne.nosecolor);
